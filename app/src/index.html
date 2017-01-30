@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>동적 테이블 생성기</title>
+  <meta name="keywords" content="HTML, HTML5, CSS, CSS3, JS, ECMAScript, ES6, ES2015, node.js, npm, yarn, Module, Webpack, Babel, TDD, Jasmine, Karma, Bootstrap, Font-Awesome" />
+  <meta name="description" content="테이블의 캡션, 제목 행과 제목 열, 행과 열 사이를 합쳐서 HTML의 table 태그를 동적으로 만들어주는 앱">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="동적 테이블 생성기">
+  <meta property="og:url" content="http://perfectacle.github.io/dynamic-table-generator/index.html">
+  <meta property="og:site_name" content="동적 테이블 생성기">
+  <meta property="og:description" content="테이블의 캡션, 제목 행과 제목 열, 행과 열 사이를 합쳐서 HTML의 table 태그를 동적으로 만들어주는 앱">
+  <meta property="og:image" content="http://perfectacle.github.io/dynamic-table-generator/logo.png">
+  <meta property="og:updated_time" content="2017-01-31T15:57:59.000Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="동적 테이블 생성기">
+  <meta name="twitter:description" content="테이블의 캡션, 제목 행과 제목 열, 행과 열 사이를 합쳐서 HTML의 table 태그를 동적으로 만들어주는 앱">
+  <meta name="twitter:image" content="http://perfectacle.github.io/dynamic-table-generator/logo.png">
+</head>
+<body class="text-center">
+<header>
+  <h1>
+    <img src="./logo.png" alt="로고" /><br />
+    동적 테이블 생성기 v1.0
+  </h1>
+</header>
+<article>
+  <h2 class="sr-only">실제 앱</h2>
+  <section>
+    <h3 class="sr-only">테이블 정보 입력</h3>
+    <label id="chkJSON"><input id="chkJSONMode" type="checkbox" /> JSON 입력 모드로 변경</label>
+    <div id="wrapMode">
+      <section id="frmNormalMode">
+        <h4>일반 입력 모드</h4>
+        <form id="frmTBLMakerNormal">
+          <label>최상단 1줄 제목행으로 지정<input id="chkHeadCols" type="checkbox" /></label>
+          <label>제일 좌측 1줄 제목열로 지정<input id="chkHeadRows" type="checkbox" /></label><br/>
+          <label>테이블 제목(캡션) <input type="text" id="txtTBLCaption" /></label><br />
+          <label><input id="txtCntRows" type="text" size="3" required />줄</label>
+          <label><input id="txtCntCols" type="text" size="3" required />칸</label>
+          <button id="btnCreateTBLNormal" class="btn btn-success btn-sm" type="submit">
+            <i class="fa fa-hand-o-down" aria-hidden="true"></i>
+            생성
+          </button>
+        </form>
+      </section>
+      <section id="frmJsonMode" class="hidden">
+        <h4>JSON 입력 모드</h4>
+        <form id="frmTBLMakerJSON">
+          <textarea id="tblJSON" cols="50" rows="10" required></textarea>
+          <button id="btnCreateTBLJson" class="btn btn-success btn-sm" type="submit">
+            <i class="fa fa-hand-o-down" aria-hidden="true"></i>
+            생성
+          </button>
+        </form>
+      </section>
+    </div>
+  </section>
+</article>
+</body>
+</html>

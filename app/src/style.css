@@ -1,0 +1,9 @@
+table {display: inline-block; margin: 0 30px; border-collapse: collapse}
+td, th {border: 1px solid black; cursor: pointer}
+#frmNormalMode, #frmJsonMode {margin-bottom: 50px}
+#containerTBL, #frmNormalMode, #frmJsonMode {position: relative}
+#btnCreateTBLNormal, #btnCreateTBLJson, #btnCollapse {position: absolute; margin-left: 10px}
+#btnCreateTBLJson, #btnCollapse {bottom: 5px}
+#containerTBLTxt {display: flex; justify-content: center; margin-bottom: 30px}
+#btnCreateTBLJson {vertical-align: text-bottom}
+.selected {color: red}

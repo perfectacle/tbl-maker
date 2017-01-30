@@ -1,2 +1,2 @@
 # tbl-maker
-HTML의 Table을 동적으로 만들어주는 앱
+HTML table Tag의 colspan, rowspan, thead, th scope=\"col\", tbody, th scope=\"row\"을 동적으로 생성해주는 앱
