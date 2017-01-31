@@ -1,12 +1,11 @@
 header {position: relative}
-header > a {position: absolute; bottom: 16%; margin-left: 14%}
+header > a {position: absolute; bottom: 10vh; margin-left: 14vw}
 table {display: inline-block; border-collapse: collapse}
 td, th {border: 1px solid black; cursor: pointer}
-#wrapMode {margin-bottom: 3%}
-#wrapMode {position: relative}
-#btnCreateTBLNormal, #btnCreateTBLJson{position: absolute; margin-left: 10px}
-#btnCreateTBLJson, #btnCollapse {bottom: 2%}
-#containerTBLTxt {display: flex; justify-content: center; margin-bottom: 2%}
+#wrapMode {position: relative; margin-bottom: 5vh}
+#btnCreateTBLNormal, #btnCreateTBLJson {position: absolute; margin-left: 1vw}
+#containerTBL {margin-bottom: 4vh}
+#containerTBLTxt {display: flex; justify-content: center; margin-bottom: 5vh}
 #btnCreateTBLJson {vertical-align: text-bottom}
 .selected {color: red}
 ._hidden {visibility: hidden}
