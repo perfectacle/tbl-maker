@@ -1,6 +1,6 @@
 # 동적 테이블 생성기
 이 앱은 HTML table Tag의 colspan, rowspan, thead,  
-th scope=\"col\", tbody, th scope=\"row\"을 동적으로 생성해주는 앱이다.  
+th scope="col", tbody, th scope="row"을 동적으로 생성해주는 앱이다.  
 사용 방법을 익히고픈 사람은 아래 링크로 가자.  
 [동적 테이블 생성기 사용법](https://perfectacle.github.io/2017/01/31/dynamic-table-generator/#사용-방법)  
 
@@ -12,7 +12,7 @@ th scope=\"col\", tbody, th scope=\"row\"을 동적으로 생성해주는 앱이
 * Bootstrap, Font-Awesome
 
 ## 사용 이유
-보기 귀찮은 사람은 으로 건너뛰자.  
+보기 귀찮은 사람은 개발하기로 건너뛰자.  
 
 * ES6(ES2015)  
 ES5의 단점을 보완하고 생산성이 높으니 안 쓸 이유가 없다.  
