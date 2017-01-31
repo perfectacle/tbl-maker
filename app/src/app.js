@@ -72,8 +72,13 @@ const drawTable = (objTBLCfg, wrapMode) => { // 실제로 테이블을 그리는
   const containerTBLInfo     = document.createElement('div'); // 테이블 태그를 감 쌀 컨테이너
   containerTBLInfo.id        = 'containerTBLInfo';
   containerTBLInfo.innerHTML =
-    '<div id="containerTBL">' + html + `
-</div><br />
+`<div id="containerTBL">
+  ${html}
+  <br />
+  <button id="btnCollapse" class="btn btn-primary _hidden">
+    <i class="fa fa-compress" aria-hidden="true"></i> 병합
+  </button>
+</div>
 <div id="containerTBLTxt">
   <section>
     <h4>HTML Table 태그</h4>
@@ -199,8 +204,7 @@ body.addEventListener('click', e => { // 동적으로 생성된 엘리먼트에 
               x           = +dom.getAttribute('data-idx-col'),
               rowspan     = +dom.getAttribute('rowspan'),
               colspan     = +dom.getAttribute('colspan'),
-              isFirstCell = !arrSelectedCell.length, // 처음에 셀을 선택한 건지 구분
-              TBL         = document.querySelector('table');
+              isFirstCell = !arrSelectedCell.length; // 처음에 셀을 선택한 건지 구분
 
         let btnCollapse = document.querySelector('#btnCollapse'); // 병합하기 버튼
 
@@ -212,14 +216,10 @@ body.addEventListener('click', e => { // 동적으로 생성된 엘리먼트에 
         if(isFirstCell && arrSelectedCell[0].length === colspan) return;
 
         if(CollapseCell.isRectangle(arrSelectedCell)) { // 병합이 가능하다면
-          if(btnCollapse) return; // 버튼이 이미 존재하면 종료.
-          btnCollapse           = document.createElement('button');
-          btnCollapse.id        = 'btnCollapse';
-          btnCollapse.className = 'btn btn-primary';
-          btnCollapse.innerHTML = '<i class="fa fa-compress" aria-hidden="true"></i> 병합';
-          TBL.insertAfter(btnCollapse);
-        } else if(btnCollapse) { // 병합이 불가능하고, 버튼이 존재한다
-          btnCollapse.remove();
+          if(btnCollapse.className.indexOf('_hidden') === -1) return; // 버튼이 이미 보이면 종료.
+          btnCollapse.className = btnCollapse.className.replace(/_hidden\s*/, ''); // 버튼 보이기
+        } else if(btnCollapse.className.indexOf('_hidden') === -1) { // 병합이 불가능하고, 버튼이 보인다
+          btnCollapse.className += ' _hidden'; // 버튼
         }
       }, 400);
     } else {

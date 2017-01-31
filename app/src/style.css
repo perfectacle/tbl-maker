@@ -1,9 +1,12 @@
-table {display: inline-block; margin: 0 30px; border-collapse: collapse}
+header {position: relative}
+header > a {position: absolute; bottom: 16%; margin-left: 14%}
+table {display: inline-block; border-collapse: collapse}
 td, th {border: 1px solid black; cursor: pointer}
-#frmNormalMode, #frmJsonMode {margin-bottom: 50px}
-#containerTBL, #frmNormalMode, #frmJsonMode {position: relative}
-#btnCreateTBLNormal, #btnCreateTBLJson, #btnCollapse {position: absolute; margin-left: 10px}
-#btnCreateTBLJson, #btnCollapse {bottom: 5px}
-#containerTBLTxt {display: flex; justify-content: center; margin-bottom: 30px}
+#wrapMode {margin-bottom: 3%}
+#wrapMode {position: relative}
+#btnCreateTBLNormal, #btnCreateTBLJson{position: absolute; margin-left: 10px}
+#btnCreateTBLJson, #btnCollapse {bottom: 2%}
+#containerTBLTxt {display: flex; justify-content: center; margin-bottom: 2%}
 #btnCreateTBLJson {vertical-align: text-bottom}
 .selected {color: red}
+._hidden {visibility: hidden}

@@ -23,10 +23,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './app/src/index.html',
       minify: {
-        collapseInlineTagWhitespace: false,
         collapseWhitespace: true,
+        conservativeCollapse: true,
         keepClosingSlash: true,
         removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
       }
     }),
     new ExtractTextPlugin('app.bundle.min.css')
@@ -38,7 +41,7 @@ module.exports = {
       exclude: /(node_modules|bower_components)/
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css', {publicPath: '/'}),
+      loader: ExtractTextPlugin.extract('style', 'css', {publicPath: './'}),
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'url?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]'
@@ -49,10 +52,5 @@ module.exports = {
       test: /\.(jp(e)g|gif|png)?$/,
       loader: 'file?name=[name].[ext]'
     }]
-  },
-  devServer: {
-    contentBase: './app/src',
-    hot: true,
-    inline: true
   }
 };
