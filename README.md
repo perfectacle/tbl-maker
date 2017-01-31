@@ -12,7 +12,7 @@ th scope="col", tbody, th scope="row"을 동적으로 생성해주는 앱이다.
 * Bootstrap, Font-Awesome
 
 ## 사용 이유
-보기 귀찮은 사람은 개발하기로 건너뛰자.  
+보기 귀찮은 사람은 [개발하기](https://github.com/perfectacle/tbl-maker/blob/master/README.md#개발하기)로 건너뛰자.  
 
 * ES6(ES2015)  
 ES5의 단점을 보완하고 생산성이 높으니 안 쓸 이유가 없다.  
