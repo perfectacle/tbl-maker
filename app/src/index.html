@@ -37,11 +37,11 @@
       <section id="frmNormalMode">
         <h4>일반 입력 모드</h4>
         <form id="frmTBLMakerNormal">
-          <label>최상단 1줄 제목행으로 지정<input id="chkHeadCols" type="checkbox" /></label>
-          <label>제일 좌측 1줄 제목열로 지정<input id="chkHeadRows" type="checkbox" /></label><br/>
+          <label><input id="chkHeadCols" type="checkbox" /> 최상단 1줄 제목행으로 지정</label>
+          <label><input id="chkHeadRows" type="checkbox" /> 제일 좌측 1줄 제목열로 지정</label><br/>
           <label>테이블 제목(캡션) <input type="text" id="txtTBLCaption" /></label><br />
-          <label><input id="txtCntRows" type="text" size="3" required />줄</label>
-          <label><input id="txtCntCols" type="text" size="3" required />칸</label>
+          <label><input id="txtCntRows" type="number" required />줄</label>
+          <label><input id="txtCntCols" type="number" required />칸</label>
           <button id="btnCreateTBLNormal" class="btn btn-success btn-sm" type="submit">
             <i class="fa fa-hand-o-down" aria-hidden="true"></i>
             생성

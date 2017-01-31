@@ -51,19 +51,6 @@ let arrSelectedCell = [], // 토글을 위해 선택된 셀을 담을 배열
       data   : []
     };
 
-
-const validateForm = (cntCols, cntRows) => { // 폼의 유효성 검사
-  // 숫자가 아니거나, 안전한 정수가 아닌 경우
-  if(!cntCols || !Number.isSafeInteger(cntCols)){
-    alert('줄은 자연수만 입력해주세요.');
-    return txtCntCols.focus(); // 함수 조기 종료.
-  } else if(!cntRows || !Number.isSafeInteger(cntRows)){
-    alert('칸은 자연수만 입력해주세요.');
-    return txtCntRows.focus(); // 함수 조기 종료.
-  }
-  return true;
-};
-
 const drawTable = (objTBLCfg, wrapMode) => { // 실제로 테이블을 그리는 함수
   // 태그 템플릿을 만들고 할당
   TemplateTable.generateTemplate(objTBLCfg);
@@ -175,7 +162,6 @@ frmTBLMakerNromal.addEventListener('submit', evt => {
         cntRows        = +txtCntRows.value;
   let containerTBLInfo = document.querySelector('#containerTBLInfo');
 
-  if(!validateForm(cntCols, cntRows)) return; // 유효성 검사를 통과하지 못하면 이벤트 종료.
   if(containerTBLInfo) { // 생성된 테이블이 있는 경우
     if(confirm('테이블을 새로 생성하시겠습니까?\n기존에 작업하던 결과는 사라집니다.')) {
       // 확인을 누르면 생성됐던 테이블 제거
