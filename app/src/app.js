@@ -34,7 +34,8 @@ const body              = document.body,
       chkHeadRows       = document.querySelector('#chkHeadRows'),
       txtCntCols        = document.querySelector('#txtCntCols'),
       txtCntRows        = document.querySelector('#txtCntRows'),
-      txtTBLCaption     = document.querySelector('#txtTBLCaption');
+      txtTBLCaption     = document.querySelector('#txtTBLCaption'),
+      lnkHelp           = document.querySelector('#lnkHelp');
 
 let arrSelectedCell = [], // 토글을 위해 선택된 셀을 담을 배열
     originData      = '', // 수정 취소 했을 때 원본 데이터
