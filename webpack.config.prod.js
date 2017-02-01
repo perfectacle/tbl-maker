@@ -1,16 +1,19 @@
-const webpack            = require('webpack'),
-      HtmlWebpackPlugin  = require('html-webpack-plugin'),
-      CleanWebpackPlugin = require('clean-webpack-plugin'),
-      ExtractTextPlugin  = require('extract-text-webpack-plugin');
+const webpack            = require('webpack');
+const HtmlWebpackPlugin  = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
+
+const ROOT   = './app/src';
+const PUBLIC = './app/dist';
 
 module.exports = {
-  entry: './app/src/app',
+  entry: `${ROOT}/app`,
   output: {
-    path: './app/dist',
+    path: PUBLIC,
     filename: 'app.bundle.min.js',
   },
   plugins: [
-    new CleanWebpackPlugin(['app/dist']),
+    new CleanWebpackPlugin([PUBLIC]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
@@ -21,7 +24,7 @@ module.exports = {
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
-      template: './app/src/index.html',
+      template: `${ROOT}/index.html`,
       minify: {
         collapseWhitespace: true,
         conservativeCollapse: true,

@@ -1,12 +1,17 @@
-const webpack = require('webpack'),
-      HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const HOST  = 'http://localhost';
+const PORT  = 8989;
+const URL   = `${HOST}:${PORT}`;
+const ROOT  = './app/src';
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    `webpack-dev-server/client?${URL}`,
     'webpack/hot/dev-server',
-    './app/src/app'
+    `${ROOT}/app`
   ],
   output: {
     filename: 'app.bundle.js',
@@ -17,9 +22,11 @@ module.exports = {
         warnings: false,
       },
     }),
+    new webpack.NoErrorsPlugin(),
+    new webpack.EvalSourceMapDevToolPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './app/src/index.html'
+      template: `${ROOT}/index.html`
     })
   ],
   module: {
@@ -45,7 +52,8 @@ module.exports = {
     }]
   },
   devServer: {
-    contentBase: './app/src',
+    contentBase: ROOT,
+    port: PORT,
     hot: true,
     inline: true
   }
